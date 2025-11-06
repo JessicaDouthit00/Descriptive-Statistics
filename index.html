@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descriptive Statistics</title>
     <style>
+        /* Define Green and Dark Green colors for easy replacement */
+        :root {
+            --green-primary: #4CAF50; /* A vibrant, standard green */
+            --green-dark: #388E3C; /* A darker shade for contrast */
+            --green-light-bg: #E8F5E9; /* A very light green for accents */
+            --white-primary: #FFFFFF;
+            --gray-text: #4A4A4A;
+            --light-gray-border: #E0E0E0;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,7 +23,8 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            /* Changed background to a green gradient */
+            background: linear-gradient(135deg, var(--green-primary) 0%, var(--green-dark) 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -22,6 +33,7 @@
         }
 
         .container {
+            /* Changed container background to white/off-white */
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-radius: 24px;
@@ -48,7 +60,8 @@
         h1 {
             font-size: 2.5rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            /* Changed text gradient to green */
+            background: linear-gradient(135deg, var(--green-primary) 0%, var(--green-dark) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -58,7 +71,7 @@
 
         .subtitle {
             text-align: center;
-            color: #64748b;
+            color: var(--gray-text); /* Use a neutral dark color for subtitle */
             font-size: 1rem;
             margin-bottom: 40px;
             font-weight: 400;
@@ -74,16 +87,17 @@
             width: 100%;
             border-collapse: separate;
             border-spacing: 0;
-            background: white;
+            background: var(--white-primary);
             overflow: hidden;
         }
 
         thead {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            /* Changed header background to green gradient */
+            background: linear-gradient(135deg, var(--green-primary) 0%, var(--green-dark) 100%);
         }
 
         th {
-            color: white;
+            color: var(--white-primary);
             font-weight: 600;
             text-transform: uppercase;
             font-size: 0.875rem;
@@ -103,11 +117,12 @@
 
         tbody tr {
             transition: all 0.3s ease;
-            border-bottom: 1px solid #f1f5f9;
+            border-bottom: 1px solid var(--light-gray-border);
         }
 
         tbody tr:hover {
-            background: linear-gradient(to right, #f8fafc, #f1f5f9);
+            /* Changed row hover background to light green/white */
+            background: linear-gradient(to right, #FAFAFA, var(--green-light-bg));
             transform: scale(1.01);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
@@ -118,13 +133,13 @@
 
         td {
             padding: 20px 24px;
-            color: #334155;
+            color: var(--gray-text);
             font-size: 0.95rem;
         }
 
         td:first-child {
             font-weight: 600;
-            color: #1e293b;
+            color: #1A1A1A; /* Darkest text for variable names */
         }
 
         td:not(:first-child) {
@@ -136,22 +151,26 @@
         .stat-value {
             display: inline-block;
             padding: 6px 14px;
-            background: #f1f5f9;
+            /* Changed stat-value background to light green */
+            background: var(--green-light-bg);
             border-radius: 8px;
             font-weight: 500;
             transition: all 0.2s ease;
+            color: var(--gray-text); /* Ensure the number itself is readable */
         }
 
         tbody tr:hover .stat-value {
-            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
-            color: #5b21b6;
+            /* Changed stat-value hover background/text to green */
+            background: linear-gradient(135deg, var(--green-primary)15 0%, var(--green-dark)15 100%);
+            color: var(--green-dark);
         }
 
         .badge {
             display: inline-block;
             padding: 4px 10px;
-            background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%);
-            color: #5b21b6;
+            /* Changed badge background/text to green */
+            background: linear-gradient(135deg, var(--green-primary)20 0%, var(--green-dark)20 100%);
+            color: var(--green-primary);
             border-radius: 6px;
             font-size: 0.75rem;
             font-weight: 600;
@@ -175,7 +194,7 @@
             }
         }
 
-        /* Subtle animation for table rows */
+        /* Subtle animation for table rows - kept the original animation */
         tbody tr {
             animation: slideIn 0.5s ease-out backwards;
         }
